@@ -1,0 +1,62 @@
+#welcome {
+    height: 500px;
+    text-align: center;
+    background-image: url("../SANINGO_Saruni_Martin_58497123_CW1/Docs/image/pexels-yan-krukau-8199562.jpg");
+    background-size: cover ;
+    background-position: center;
+    margin-bottom: 30px;
+}
+#welcome p{
+    font-size: xx-large;
+    color: antiquewhite;
+    opacity: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#adress_contact_and_info {
+    width: 45%;
+    float: left;
+    height: 100%;
+    margin-right: 40px;
+    font-size: larger;
+    padding-left: 16px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px rgb(174, 174, 174);
+    margin-left: 10px;
+    border: solid 2px rgb(28, 31, 34);
+    
+}
+#adress_contact_and_info:hover {
+    transform: scale(1.01,1.01);
+    -webkit-transform: scale(1.01,1.01);
+    transition: 0.6s ease-in;
+    -webkit-transition: 0.6s ease-in;
+}
+
+#location_and_apply {
+    width: 45%;
+    float: left;
+    height: 100%;
+}
+
+#loc img:hover {
+    cursor: zoom-in;
+    cursor: -webkit-zoom-in;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transition: 0.6s ease-in;
+    -webkit-transition: 0.6s ease-in;
+}
+#location_and_apply h3::before {
+    content: url(../SANINGO_Saruni_Martin_58497123_CW1/Docs/image/bcg\ loc1.png);
+}
+footer {
+    display: block;
+    float: left;
+}
+dd {
+    text-indent: 30px;
+}
+a > img:hover {
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+}

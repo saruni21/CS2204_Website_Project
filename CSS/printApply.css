@@ -1,0 +1,9 @@
+#apply h5 {
+    display: none;
+}
+nav {
+    display: none;
+}
+#major_choice h2::before {
+    content: "Last Change Time: ";
+}

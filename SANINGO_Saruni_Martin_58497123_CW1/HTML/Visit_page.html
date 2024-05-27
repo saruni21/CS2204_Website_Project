@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visit page</title>
+    <link rel="stylesheet" href="../../CSS/default.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../CSS/visit.css" type="text/css" media="all">
+    <script src="https://personal.cs.cityu.edu.hk/~cs2204/2023/cw3cs2204.js"></script>
+    <script>
+            
+        function validateForm() {
+            let visitors = document.getElementById('visitors').value;
+            let errorMessage = document.getElementById('error');
+            if (visitors === '') {
+                errorMessage.textContent = "Data not completed, please re-enter";
+                return false; // Prevent form submission
+            }
+            else if (isNaN(visitors) || visitors <= 0) {
+                errorMessage.textContent = "Please enter a valid number for people!";
+                return false; // Prevent form submission
+            }
+            else {
+                let x = reserve(date, time, visitors);
+                if(x){
+                    alert('Your reservation is successful')
+                }
+                else{
+                    alert('Sorry, The reservation is full!')
+                }
+                return true; // Submit the form
+            }
+ 
+    };
+
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../Docs/image/logo.png" alt="HKIU logo" width="400" height="100"><br>
+            <h1>Hong Kong Industrial University</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="nav"><a href="Homepage.html">Home</a></li>
+            <li class="nav"><a href="About_page.html">About</a></li>
+            <li class="nav"><a href="Apply_page.html">Apply</a></li>
+            <li class="nav"><a href="Visit_page.html">Visit</a></li>
+            <li class="nav"><a href="Program_page.html">Program</a></li>
+            <li class="nav"><a href="Contact_page.html">Contact</a></li>
+
+        </ul>
+
+
+    </nav>
+    <div id="visit">
+        <p>We warmly welcome you to visit us at our Kowloon campus and experience our vibrant learning community. Our campus is located in the Hong Kong Kowloon High-Tech Park, where we collaborate closely with institutes of the Chinese Academy of Sciences.</p><br>
+
+        <p>During your visit, you can explore our world-class facilities, including the Protein Folding Science Center, Hong Kong Advanced Computing Equipment, Hong Kong Ultrafast Laser Facility, Hong Kong Electron-Positron Collider, and Hong Kong Supercomputer Facility. These facilities are available to our faculty, students, and researchers worldwide.</p><br>
+
+        <p>You will also have the chance to meet our renowned scholars and experts from home and abroad committed to providing students with cutting-edge knowledge and skills in their respective fields. Our faculty members are recognized leaders in their fields, and their research has been published in prestigious journals such as Cell, Nature, and Science.</p><br>
+
+        <p>We hope you will come and visit us soon to experience firsthand the dynamic and innovative community at Hong Kong Industrial University.</p><br>
+
+    </div>
+
+    <div id="location_and_contact">
+        <div id="contact_info">
+            <h2>Location</h2>
+            <br>
+            Address: Tat Chee Avenue, Kowloon, Hong Kong SAR <br>
+            Tel: (852) 1234 5678 <br>
+            Fax: (852) 8765 4321 <br>
+            Email: <a href="mailto:visit@hkiu.edu.hk">visit@hkiu.edu.hk</a><br>
+        </div>
+
+        <img src="../Docs/image/location.jpg" alt="HKIU Location" width="800" height="800">
+
+
+    </div>
+
+    <div id="visit_form">
+        <h2>Hong Kong Industrial University is having an open day on campus! Please make a reservation to visit our campus!</h2>
+        <form action="#" method="get" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Booking Information</legend>
+                <label for="date">Date: </label>
+                <input type="date" id="date" name="date of reservation" value="2024-01-01" min="2023-12-10" max="2024-02-28"> <br>
+                <label for="time">Time: </label>
+                <select name="Time slots" id="time">
+                    <option value="8:30-9:30am">08:30-09:30am</option>
+                    <option value="9:30-10:30am">09:30-10:30am</option>
+                    <option value="10:30-11:30am">10:30-11:30am</option>
+                    <option value="11:30-12:30pm">11:30-12:30am</option>
+                    <option value="2:30-3:30pm">2:30-3:30pm</option>
+                    <option value="3:30-4:30pm">3:30-4:30pm</option>
+
+                </select> <br>
+
+                <label for="visitors">No. of visitors: </label>
+                <input type="text" id="visitors" value=" ">
+                <br><br>
+                <p id="error" class="error-message"></p>
+                <input type="submit" value="Check Availability">
+                <input type="reset" value="Reset">
+
+            </fieldset>
+
+
+        </form>
+
+    </div>
+    <footer>
+        <img src="../Docs/image/footer_logo.png" alt="HKIU footer logo" width="300" height="100"><br>
+        @CityU 2023 sources of images and text from Wikipedia and Courtesy of Icon pack by Icons8 -- designed by <a href="Design_Page.html" target="_blank">Saruni</a>
+
+
+    </footer>
+</body>
+</html>

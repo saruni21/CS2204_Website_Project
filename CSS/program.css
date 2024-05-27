@@ -1,0 +1,55 @@
+#promo h3 {
+    display: inline-block;
+    width: 40%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: xx-large;
+}
+#promo {
+    text-align: center;
+}
+#promo h3 {
+    float: left;
+    margin-top: 2%;
+    width: 45%;
+}
+#promo h1 {
+    text-align: center;
+    margin: 2%;
+}
+#promo video {
+    width: 40%;
+    margin-bottom: 2%;
+}
+#promo video {
+    float: left;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+thead {
+    color: white;
+    background-color: black;
+}
+tbody tr:hover {
+    background-color: lightcyan;
+}
+tbody tr {
+    height: 30px;
+}
+thead tr {
+    height: 30px;
+}
+.odd {
+    background-color: lightgrey;
+}
+#vid2 {
+    display: none;
+}
+

@@ -1,0 +1,144 @@
+#welcome {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 2%;
+}
+
+#apply {
+    margin-bottom: 1%;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+#apply button {
+    width: 30%;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin-left: 0px;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 1%;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+#apply button:hover, #apply button:focus {
+    background-color: white;
+}
+
+#ceng {
+    clear: both;
+    border: 1px solid black;
+}
+
+#ceng div {
+    display: inline-block;
+    width: 30%
+}
+
+#ceng div {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#science div {
+    display: inline-block;
+    width: 30%;
+    margin-top: 0%;
+}
+
+#science div {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#ids div {
+    display: inline-block;
+    width: 30%
+}
+
+#ids div {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 1%;
+    margin-left: 30px;
+    height: 400px;
+}
+thead {
+    background-color: rgb(2, 183, 56);
+    color: white;
+    height: 30px;
+}
+.odd {
+    background-color: rgb(221, 221, 221);
+}
+tbody {
+    height: 100px;
+}
+#major_choice h1, #major_choice h2 {
+    margin: 10px 30px;
+}
+#major_choice {
+    clear: both;
+    z-index: 1;
+}
+tbody tr:hover {
+    background-color: lightcyan;
+}
+#science {
+    float: left;
+}
+#ids {
+    float: left;
+}
+#ceng div:hover, #science div:hover, #ids div:hover {
+    background-color: lightcyan;
+}
+.ceng1, .science1, .ids1 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    top: 6.6%;
+}
+#apply {
+    overflow: visible;
+}
+.ceng1 div, .science1 div, .ids1 div {
+    background-color: lightgrey;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#submission input:hover{
+    background-color: lightcyan;
+}
+.show {display: block;
+    z-index: 1;
+}
+.show1 {display: block;
+    z-index: 0;
+}
+.show2 {display: block;}
+
+#nthn {
+    color: red;
+    text-align: center;
+}

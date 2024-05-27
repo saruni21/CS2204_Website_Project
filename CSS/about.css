@@ -1,0 +1,36 @@
+#text_content {
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+#about img {
+    width: 100%;
+}
+table {
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+thead {
+    background-color: lightgrey;
+}
+tbody tr:nth-child(odd) {
+    background-color: rgb(241, 240, 240);
+}
+table caption {
+    background-color: lightgrey;
+    margin-bottom: 20px;
+    font-size: larger;
+    font-weight: bold;
+}
+tbody tr:hover {
+    background-color: lightcyan;
+}

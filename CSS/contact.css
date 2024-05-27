@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+}
+table {
+    width: 80%;
+    margin: 30px auto;
+}
+thead {
+    background-color: yellowgreen;
+    color: white;
+}
+tr {
+    height: 30px;
+}
+tbody tr {
+    background-color: rgb(240, 240, 240);
+}

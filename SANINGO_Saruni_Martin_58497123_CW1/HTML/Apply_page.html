@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply page</title>
+    <link rel="stylesheet" href="../../CSS/default.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../CSS/apply.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../CSS/printApply.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../../CSS/default.css" type="text/css" media="print">
+    <link rel="stylesheet" href="../../CSS/apply.css" type="text/css" media="print">
+    <script>
+           /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("ceng").classList.toggle("show");
+            document.getElementById("science").classList.remove("show1");
+            document.getElementById("ids").classList.remove("show2");
+
+        }
+        function myFunction1() {
+            document.getElementById("ceng").classList.remove("show");
+            document.getElementById("ids").classList.remove("show2");
+            document.getElementById("science").classList.toggle("show1");
+        }
+        function myFunction2() {
+            document.getElementById("ceng").classList.remove("show");
+            document.getElementById("science").classList.remove("show1");
+            document.getElementById("ids").classList.toggle("show2");
+        }
+
+
+        function rankCS () {
+            var rank = document.getElementById("CS_and_tech").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(String(row.cells[1].textContent) == "BSc in Computer Science and Technology"){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Computer Science and Technology'; // second column
+                            row.cells[0].textContent = 'College of Engineering'; // second column
+                        }
+
+                    }
+            }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Computer Science and Technology as your " + rank + "st chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Computer Science and Technology as your " + rank + "nd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Computer Science and Technology as your " + rank + "rd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Computer Science and Technology as your " + rank + "th chosen major in " + document.getElementById("ceng_title").textContent)
+
+                }
+                
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+                 
+            }
+            
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+            
+
+        }
+        function rankEI () {
+            var rank = document.getElementById("Electronic_Information").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BEng in Electronic Information'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+                        }
+                        else if (suefni){
+                            row.cells[1].textContent = 'BEng in Electronic Information'; // second column
+                            row.cells[0].textContent = 'College of Engineering'; // second column
+                        }
+
+                    }
+            }
+
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BEng in Electronic Information as your " + rank + "st chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BEng in Electronic Information as your " + rank + "nd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BEng in Electronic Information as your " + rank + "rd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BEng in Electronic Information as your " + rank + "th chosen major in " + document.getElementById("ceng_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankMSE () {
+            var rank = document.getElementById("MSE").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BEng in Material Science and Engineering'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BEng in Material Science and Engineering'; // second column
+                            row.cells[0].textContent = 'College of Engineering'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BEng in Material Science and Engineering as your " + rank + "st chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BEng in Material Science and Engineering as your " + rank + "nd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BEng in Material Science and Engineering as your " + rank + "rd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BEng in Material Science and Engineering as your " + rank + "th chosen major in " + document.getElementById("ceng_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankMC () {
+            var rank = document.getElementById("MC").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BEng in Materials and Chemicals'){
+                        alert('You have already chosen this major')
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank")
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BEng in Materials and Chemicals'; // second column
+                            row.cells[0].textContent = 'College of Engineering'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BEng in Materials and Chemicals as your " + rank + "st chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BEng in Materials and Chemicals as your " + rank + "nd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BEng in Materials and Chemicals as your " + rank + "rd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BEng in Materials and Chemicals as your " + rank + "th chosen major in " + document.getElementById("ceng_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankEST () {
+            var rank = document.getElementById("est").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Electronic Science and Technology'){
+                        alert('You have already chosen this major')
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank")
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Electronic Science and Technology'; // second column
+                            row.cells[0].textContent = 'College of Engineering'; // second column
+                        }
+
+                    }
+            }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Electronic Science and Technology as your " + rank + "st chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Electronic Science and Technology as your " + rank + "nd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Electronic Science and Technology as your " + rank + "rd chosen major in " + document.getElementById("ceng_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Electronic Science and Technology as your " + rank + "th chosen major in " + document.getElementById("ceng_title").textContent)
+
+                }
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankPHY () {
+            var rank = document.getElementById("phy").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Physics'){
+                        alert('You have already chosen this major')
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank")
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Physics'; // second column
+                            row.cells[0].textContent = 'College of Science'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Physics as your " + rank + "st chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Physics as your " + rank + "nd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Physics as your " + rank + "rd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Physics as your " + rank + "th chosen major in " + document.getElementById("science_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankChem () {
+            var rank = document.getElementById("chem").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Chemistry'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Chemistry'; // second column
+                            row.cells[0].textContent = 'College of Science'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Chemistry as your " + rank + "st chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Chemistry as your " + rank + "nd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Chemistry as your " + rank + "rd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Chemistry as your " + rank + "th chosen major in " + document.getElementById("science_title").textContent)
+
+                }
+                
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        
+        function rankBIOS () {
+            var rank = document.getElementById("Bios").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Biology'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Biology'; // second column
+                            row.cells[0].textContent = 'College of Science'; // second column
+                        }
+
+                    }
+            }
+            if ((rank >= 1 && rank <= 10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Biology as your " + rank + "st chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Biology as your " + rank + "nd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Biology as your " + rank + "rd chosen major in " + document.getElementById("science_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Biology as your " + rank + "th chosen major in " + document.getElementById("science_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankCOGS () {
+            var rank = document.getElementById("cogs").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Cognitive Science'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Cognitive Science'; // second column
+                            row.cells[0].textContent = 'College of Interdisciplinary Sciences'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Cognitive Science as your " + rank + "st chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Cognitive Science as your " + rank + "nd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Cognitive Science as your " + rank + "rd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Cognitive Science as your " + rank + "th chosen major in " + document.getElementById("ids_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankBioMed () {
+            var rank = document.getElementById("BioMed").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BEng in Biomedical Engineering'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank");
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BEng in Biomedical Engineering'; // second column
+                            row.cells[0].textContent = 'College of Interdisciplinary Sciences'; // second column
+                        }
+
+                    }
+                }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BEng in Biomedical Engineering as your " + rank + "st chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BEng in Biomedical Engineering as your " + rank + "nd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BEng in Biomedical Engineering as your " + rank + "rd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BEng in Biomedical Engineering as your " + rank + "th chosen major in " + document.getElementById("ids_title").textContent)
+
+                }
+                
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10")
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function rankMedicine () {
+            var rank = document.getElementById("Medicine").value;
+            let myTable = document.getElementById('table');
+            let suefni = true;
+            for (let i = 1; i < myTable.rows.length; i++) {
+                    let row = myTable.rows[i];
+                    if(row.cells[1].textContent === 'BSc in Biology and Medicine'){
+                        alert('You have already chosen this major');
+                        suefni = false;
+                    }
+                    else if(row.cells[2].textContent == rank) { // third column, index starts from 0
+                        if(row.cells[1].textContent){
+                            alert("You have already chosen this rank")
+                            suefni = false;
+                        }
+                        else if(suefni){
+                            row.cells[1].textContent = 'BSc in Biology and Medicine'; // second column
+                            row.cells[0].textContent = 'College of Interdisciplinary Sciences'; // second column
+                        }
+
+                    }
+            }
+            if ((rank >= 1 && rank<=10) && suefni){
+                if (rank == "1") {
+                    alert("You have successfully choosen BSc in Biology and Medicine as your " + rank + "st chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "2") {
+                    alert("You have successfully choosen BSc in Biology and Medicine as your " + rank + "nd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else if (rank == "3") {
+                    alert("You have successfully choosen BSc in Biology and Medicine as your " + rank + "rd chosen major in " + document.getElementById("ids_title").textContent)
+                }
+                else {
+                    alert("You have successfully choosen BSc in Biology and Medicine as your " + rank + "th chosen major in " + document.getElementById("ids_title").textContent)
+
+                }
+                
+                updateTable();
+                document.getElementById("nthn").textContent = ''
+
+            }
+            else if(rank < 1 || rank > 10) {
+                alert("Please enter a valid rank from 1 to 10");
+            }
+            else if(isNaN(parseInt(rank)) || (!Number.isInteger(parseFloat(rank))) && suefni){
+                alert("Please enter the rank of the chosen major");
+            }
+        }
+        function updateTable() {
+            let tableElement = document.getElementById('table');
+            let filledRows = 0;
+            let lastChangeTime;
+
+            for(let i = 1; i < tableElement.rows.length; i++) {
+                let row = tableElement.rows[i];
+                let cell = row.cells[0];
+                if(cell.textContent) { // check if the cell is not empty
+                    filledRows += 1;
+                    lastChangeTime = new Date(); // update the last change time
+                    
+                }
+            }
+            document.getElementById("lastChangeTime").textContent = "Last Change Time: " + lastChangeTime;
+            document.getElementById("no-of-majors").textContent = "Total Number of Majors Applied: " + filledRows;
+        }
+        function submission(ball = true) {
+            let tableElement = document.getElementById('table');
+            let filledRows = 0;
+            let lastChangeTime;
+            document.getElementById("nthn").textContent = "";
+            let emptyCellRows = [];
+
+            for(let i = 1; i < tableElement.rows.length; i++) {
+                let row = tableElement.rows[i];
+                let cell = row.cells[0];
+                if (i > 1){
+                    for(let a = 1; a < i; a++){
+                        if ((!tableElement.rows[a].cells[0].textContent) && cell.textContent){
+                            emptyCellRows.push(i);
+                        }
+
+                    }
+                }
+                if(cell.textContent) { 
+                    filledRows += 1;
+                    lastChangeTime = new Date(); // update the last change time
+                    
+                }
+            }
+            let uniqueemptyCellRows = [...new Set(emptyCellRows)];
+
+            
+            if (ball && filledRows === 0){
+                document.getElementById("nthn").textContent = "You have not chosen a major";
+                return false;
+            }
+
+        }
+        function ordinal(x) {
+            if (x == 1) {
+                return "1st";
+            }
+            if (x == 2){
+                return "2nd";
+            }
+            if (x == 3){
+                return "3rd";
+            }
+            if (x >= 4) {
+                return x + "th";
+            }
+        }
+        function errorChecking(){
+            let tableElement = document.getElementById('table');
+            let filledRows = 0;
+            let lastChangeTime = new Date();
+            document.getElementById("nthn").textContent = "";
+            let emptyCellRows = [];
+
+            for(let i = 1; i < tableElement.rows.length; i++) {
+                let row = tableElement.rows[i];
+                let cell = row.cells[0];
+                if (i > 1){
+                    for(let a = 1; a < i; a++){
+                        if ((cell.textContent && !(tableElement.rows[a].cells[0].textContent))){
+                            emptyCellRows.push(a);
+                        }
+                        if(cell.textContent) { 
+                    filledRows += 1;
+                    
+                    }
+                    }
+                }
+            }
+            let uniqueemptyCellRows = [...new Set(emptyCellRows)];
+            console.log(uniqueemptyCellRows);
+            if (uniqueemptyCellRows.length == 1) {
+                if (uniqueemptyCellRows[0] == "1") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else if (uniqueemptyCellRows[0] == "2") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else if (uniqueemptyCellRows[0] == "3") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + " chosen major, you cannot leave any gap between your majors";
+                }
+            }
+            else if (uniqueemptyCellRows.length == 2) {
+                if (uniqueemptyCellRows[0] == "1") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + ' and ' + ordinal(uniqueemptyCellRows[1]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else if (uniqueemptyCellRows[0] == "2") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + ' and ' + ordinal(uniqueemptyCellRows[1]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else if (uniqueemptyCellRows[0] == "3") {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + ' and ' + ordinal(uniqueemptyCellRows[1]) + " chosen major, you cannot leave any gap between your majors";
+                }
+                else {
+                    document.getElementById("nthn").textContent = "You have not chosen your " + ordinal(uniqueemptyCellRows[0]) + ' and ' + ordinal(uniqueemptyCellRows[1]) + " chosen major, you cannot leave any gap between your majors";
+                }
+            }
+            else if (uniqueemptyCellRows.length >= 3) {
+                let ordinalemptyCellRows = []
+                for (let b = 0; b < uniqueemptyCellRows.length; b++){
+                    if (uniqueemptyCellRows[b] == 1) {
+                        ordinalemptyCellRows.push("1st");
+                    }
+                    if (uniqueemptyCellRows[b] == 2) {
+                        ordinalemptyCellRows.push("2nd");
+                    }
+                    if (uniqueemptyCellRows[b] == 3) {
+                        ordinalemptyCellRows.push("3rd");
+                    }
+                    if (uniqueemptyCellRows[b] >= 4) {
+                        ordinalemptyCellRows.push(uniqueemptyCellRows[b] + "th");
+                    }
+                }
+                let lastelement = ordinalemptyCellRows.pop()
+                document.getElementById("nthn").textContent = "You have not chosen your " + ordinalemptyCellRows.join(', ') + " and " + lastelement + " chosen major, you cannot leave any gap between your majors";
+                
+            }
+            else if (filledRows === 0){
+                document.getElementById("nthn").textContent = "You have not chosen a major";
+                return false;
+            }
+            else {
+                document.getElementById("nthn").textContent = "You have successfully submitted your application at time " + lastChangeTime
+            }
+        }
+        function clearTable() {
+            let lastChangeTime;
+            let myTable = document.getElementById('table')
+            for (let i = 1; i < myTable.rows.length; i++) {
+                let row = myTable.rows[i];
+                row.cells[1].textContent = '';
+                row.cells[0].textContent = '';
+
+            }
+            document.getElementById("lastChangeTime").textContent = "Last Change Time: " + (lastChangeTime = new Date());
+            document.getElementById("no-of-majors").textContent = "Total Number of Majors Applied: 0"
+            document.getElementById("nthn").textContent = ""
+        }
+        
+
+        
+
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../Docs/image/logo.png" alt="HKIU logo" width="400" height="100"><br>
+        <h1>Hong Kong Industrial University</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="nav"><a href="Homepage.html">Home</a></li>
+            <li class="nav"><a href="About_page.html">About</a></li>
+            <li class="nav"><a href="Apply_page.html">Apply</a></li>
+            <li class="nav"><a href="Visit_page.html">Visit</a></li>
+            <li class="nav"><a href="Program_page.html">Program</a></li>
+            <li class="nav"><a href="Contact_page.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+    <div id="welcome">
+        Welcome to HKIU
+    </div>
+    <div id="apply" class="app">
+        <h3>Common Application to Undergraduate Program</h3>
+            <div class="app-ceng">
+            <button id="ceng_title" class="ceng-tit" onclick="myFunction()">College of Engineering</button>
+            <div id="ceng" class="ceng1">
+                <form action="#" method="get">
+                <div class="cs">
+                    <img src="../Docs/image/cs.png" alt="CS and Tech" width="200" height="200">
+                    <label for="CS_and_tech">BSc in Computer Science and Technology</label>
+                    <input type="text" id="CS_and_tech" name="CS Rank of Choice" value="">
+                    <input type="button" value="Rank of Choice" onclick="rankCS()">
+                    <br>
+                </div>
+
+                <div>
+                    <img src="../Docs/image/ei.png" alt="EI" width="200" height="200">
+                    <label for="Electronic_Information">BEng in Electronic Information</label>
+                    <input type="text" id="Electronic_Information" name="Electronic Information Rank of Choice" value="">
+                    <input type="button" value="Rank of Choice" onclick="rankEI()">
+                    <br>
+                </div>
+
+                <div>
+                    <img src="../Docs/image/mse.png" alt="MSE" width="200" height="200">
+                    <label for="MSE">BEng in Material Science and Engineering</label>
+                    <input type="text" id="MSE" name="MSE Rank of Choice" value="">
+                    <input type="button" value="Rank of Choice" onclick="rankMSE()">
+                    <br>
+                </div>
+
+                <div>
+                    <img src="../Docs/image/mc.png" alt="MC" width="200" height="200">
+                    <label for="MC">BEng in Materials and Chemicals</label>
+                    <input type="text" id="MC" name="MC Rank of Choice" value="">
+                    <input type="button" value="Rank of Choice" onclick="rankMC()">
+                    <br>
+                </div>
+
+                <div>
+                    <img src="../Docs/image/est.png" alt="EST" width="200" height="200">
+                    <label for="est">BSc in Electronic Science and Technology</label>
+                    <input type="text" id="est" name="EST Rank of Choice" value="">
+                    <input type="button" value="Rank of Choice" onclick="rankEST()">
+                    <br>
+                </div>
+                </form>    
+            </div>
+            </div>
+            <div class="app-science">
+            <button id="science_title" class="science-tit" onclick="myFunction1()">College of Science</button>
+            <div id="science" class="science1">
+                    <form action="#" method="get">
+                        <div>
+                            <img src="../Docs/image/phy.png" alt="Physics" width="200" height="200">
+                            <label for="phy">BSc in Physics</label>
+                            <input type="text" id="phy" name="Physics Rank of Choice">
+                            <input type="button" value="Rank of Choice" onclick="rankPHY()">
+                            <br>
+                        </div>
+    
+                        <div>
+                            <img src="../Docs/image/chem.png" alt="Chemistry" width="180" height="200">
+                            <label for="chem">BSc in Chemistry</label>
+                            <input type="text" id="chem" name="Chemistry Rank of Choice">
+                            <input type="button" value="Rank of Choice" onclick="rankChem()">
+                            <br>
+                        </div>
+    
+                        <div>
+                            <img src="../Docs/image/bio.png" alt="Biology" width="200" height="200">
+                            <label for="Bios">BSc in Biology</label>
+                            <input type="text" id="Bios" name="Biology Rank of Choice">
+                            <input type="button" value="Rank of Choice" onclick="rankBIOS()">
+                            <br>
+                        </div>
+                    </form>
+            </div>
+            </div>
+            <div class="app-ids">
+            <button id="ids_title" class="ids-tit" onclick="myFunction2()">College of Interdisciplinary Studies</button>
+            <div id="ids" class="ids1">
+                <form action="#" method="get">
+                    <div>
+                        <img src="../Docs/image/cogs.png" alt="Cognitive Science" width="200" height="200">
+                        <label for="cogs">BSc in Cognitive Science</label>
+                        <input type="text" id="cogs" name="Cognitive Science Rank of Choice">
+                        <input type="button" value="Rank of Choice" onclick="rankCOGS()">
+                        <br>
+                    </div>
+    
+                    <div>
+                        <img src="../Docs/image/be.png" alt="BME" width="160" height="200">
+                        <label for="BioMed">BEng in Biomedical Engineering</label>
+                        <input type="text" id="BioMed" name="BME Rank of Choice">
+                        <input type="button" value="Rank of Choice" onclick="rankBioMed()">
+                        <br>
+                    </div>
+    
+                    <div>
+                        <img src="../Docs/image/bm.png" alt="Biology and Medicine" width="200" height="200">
+                        <label for="Medicine">BSc in Biology and Medicine</label>
+                        <input type="text" id="Medicine" name="Biology and Medicine Rank of Choice">
+                        <input type="button" value="Rank of Choice" onclick="rankMedicine()">
+                        <br>
+                    </div>
+                </form>
+    
+            </div>
+ 
+    </div>
+    
+
+    <div id="major_choice">
+        <h1>Your chosen majors:</h1>
+        <h2 id="lastChangeTime"></h2>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>College</th>
+                    <th>Major</th>
+                    <th>Rank</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="odd">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">1</td>
+
+                    
+                </tr>
+                <tr class="even">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">2</td>
+                </tr>
+                <tr class="odd">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">3</td>
+                </tr>
+                <tr class="even">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">4</td>
+                </tr>
+                <tr class="odd">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">5</td>
+                </tr>
+                <tr class="even">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">6</td>
+                </tr>
+                <tr class="odd">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">7</td>
+                </tr>
+                <tr class="even">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">8</td>
+                </tr>
+                <tr class="odd">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">9</td>
+                </tr>
+                <tr class="even">
+                    <td></td>
+                    <td></td>
+                    <td id="ranker">10</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <br>
+        <h2 id="no-of-majors">Total Number of Majors Applied: 0</h2>
+    
+        <div id="submission">
+            <form action="#" method="get" onsubmit="errorChecking()">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear" onclick="clearTable()">
+                <p id="nthn"></p>
+
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <footer>
+        <img src="../Docs/image/footer_logo.png" alt="HKIU footer logo" width="300" height="100"><br>
+        @CityU 2023 sources of images and text from Wikipedia and Courtesy of Icon pack by Icons8 -- designed by <a href="Design_Page.html" target="_blank">Saruni</a>
+
+
+    </footer>
+</body>
+</html>
